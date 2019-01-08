@@ -11,7 +11,7 @@ from PIL import Image
 
 def run(dir,width):
     if dir is not None:
-        find_path = "find " + dir + " -regex '.*\(jpg\|JPG\|png\|PNG\|jpeg\)' -type f  | sort -nr"
+        find_path = "find " + dir + " -regex '.*\(jpg\|JPG\|png\|PNG\|jpeg\)' -type f   -size 100k | sort -nr"
         result = os.popen(find_path).read().split('\n')
 
         for item in result:
